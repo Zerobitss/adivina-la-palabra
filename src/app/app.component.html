@@ -1,0 +1,67 @@
+<div class = "row">
+
+  <div class= "col text-center" >
+
+      <img src="assets/img/{{img}}.png" class ="morroco-img">
+
+      <h3>Intentos 
+         <small> {{intentos}} / 8 </small>
+      </h3>
+
+  </div>
+
+</div>
+
+<div class = "row">
+
+    <div class= "col text-center">
+          <h2>
+            Completar la siguiente frase con los caracteres que se muestran a continuacion:
+          </h2>
+      
+      <h1>
+        {{ palabraOculta }}
+      </h1>
+
+  
+    </div>
+  
+  </div>
+  <div class = "row" *ngIf="gano">
+
+      <div class= "col text-center">
+    
+        <h1>Feliz Cumple mes amor, hoy es un dia especial para los dos y solamente queria decirte que te amo muchismo
+            y me siento muy orgulloso de estar a tu lado mi morroco</h1>
+        <h4>❤</h4>
+    
+      </div>
+ 
+    </div>
+
+    <div class = "row" *ngIf="perdio">
+
+        <div class= "col text-center">
+      
+          <h1>Lo siento perdiste :( eres una perdedora!</h1>
+          <h4>
+              <a href="#" onclick="javascript:window.location.reload();">Click aqui para intentar de nuevo</a>
+          </h4>
+      
+        </div>
+   
+      </div>
+
+  <div class = "row" *ngIf ="!gano && !perdio">
+
+      <div class= "col text-center">
+    
+        <button (click) = "prueba(valor)" *ngFor= "let valor of letras" class="btn btn-primary">
+          {{valor}}
+        </button>
+
+
+    
+      </div>
+    
+    </div>
